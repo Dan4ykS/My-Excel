@@ -1,0 +1,19 @@
+@import "../../../styles/mixins.scss";
+
+.tablePage__toolbar {
+  display: flex;
+  .fa-bold, .fa-italic, div {
+    &:hover {
+      @include hoverShadow;
+    }
+  }
+  div {
+    position: relative;
+    width: 45px;
+    .fa-sort-down {
+      @include centerVertical;
+      right: 0;
+      font-size: 15px;
+    }
+  }
+}

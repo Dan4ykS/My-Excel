@@ -1,0 +1,32 @@
+.tablePage {
+  position: relative;
+  &__header,
+  &__formula,
+  &__toolbar,
+  &__table {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 10px 15px;
+    border-top: 1px solid var(--borderColor);
+  }
+  &__header {
+    top: 0;
+    height: var(--headerHeight);
+  }
+  &__formula {
+    top: calc(var(--headerHeight) + var(--toolbarHight));
+    height: 45px;
+  }
+  &__toolbar {
+    top: var(--headerHeight);
+    height: var(--toolbarHight);
+  }
+  &__table {
+    padding: 0;
+    top: calc(var(--headerHeight) + var(--toolbarHight) + 45px);
+    height: calc(100vh - (var(--headerHeight) + var(--toolbarHight) + 45px));
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+}

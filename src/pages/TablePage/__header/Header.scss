@@ -1,0 +1,51 @@
+@import "../../../styles/mixins.scss";
+
+.tablePage__header {
+  @include gridTemplate(1, 100%, 2, 200px);
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .tableName {
+    position: relative;
+    .fa-file-excel {
+      @include centerVertical;
+      font-size: 30px;
+      color: var(--mainThemeColor);
+    }
+    input {
+      margin-left: 50px;
+      width: calc(100% - 50px);
+      border-color: var(--lightColor);
+      &:hover {
+        border-color: #ced4da;
+      }
+    }
+  }
+  .tableBtn {
+    text-align: right;
+    .fa-trash,
+    .fa-plus-square {
+      font-size: 25px;
+      &:hover {
+        @include hoverShadow(100%);
+      }
+    }
+    .fa-plus-square {
+      &:hover {
+        color: var(--mainThemeColor);
+      }
+    }
+    .fa-trash {
+      &:hover {
+        color: var(--dangerouseColor);
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .tablePage__header {
+    @include gridTemplate(1, 100%, 2, 100px);
+  }
+}

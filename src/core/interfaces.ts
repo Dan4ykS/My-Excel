@@ -1,5 +1,7 @@
-import Component from "./Component";
+import Component from './Component';
 
-export interface ICWOptions { 
-  components: Component[]
+export interface ICWOptions {
+  components: Array<new () => Component>;
 }
+
+

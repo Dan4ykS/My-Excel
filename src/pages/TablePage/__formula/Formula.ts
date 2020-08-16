@@ -1,12 +1,14 @@
 import Component from '../../../core/Component';
 import './Formula.scss';
 
-class Formula extends Component {
+export default class Formula extends Component {
   render() {
     return `
-      <div class="tablePage__formula">Место для формулы</div>
+      <div class="tablePage__formula">
+        <div class="func">Fx</div>
+        <div class="formula" contenteditable spellcheck="false"></div>
+      </div>
     `;
   }
 }
 
-export default new Formula();

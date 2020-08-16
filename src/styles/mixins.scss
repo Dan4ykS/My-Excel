@@ -1,9 +1,21 @@
 @mixin gridAutoTemplate($minWidth, $minHeight: 100px) {
+  display: grid;
   grid-template: minmax($minHeight, auto) / repeat(auto-fit, minmax($minWidth, auto));
   grid-auto-rows: minmax($minHeight, auto);
 }
 
 @mixin gridTemplate($rowsCount, $rowMinWidth, $colCount, $colWidth) {
   display: grid;
-  grid-template: repeat($rowsCount, minmax($rowMinWidth, auto)) / repeat($colCount, $colWidth);
+  grid-template: repeat($rowsCount, minmax($rowMinWidth, auto)) / repeat($colCount, minmax($colWidth, auto));
+}
+
+@mixin centerVertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin hoverShadow ($borderRadius: 0) {
+  background-color: var(--shadowColor);
+  border-radius: $borderRadius
 }

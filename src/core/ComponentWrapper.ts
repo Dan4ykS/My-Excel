@@ -1,14 +1,18 @@
 import { create } from '../utils/helpFunctionsForHTML';
 import { ICWOptions } from './interfaces';
+import Component from './Component';
 
 export default class ComponentWrapper {
-  private elementsForRender: string = '';
   constructor(private wrapperSelector: string, private options: ICWOptions) {}
   protected getRoot(): HTMLElement {
-    const $root = create('div');
-    this.options.components.forEach((Component) => (this.elementsForRender += Component.render()));
-    $root.insertAdjacentHTML('beforeend', this.elementsForRender);
+    const $root = create('div'),
+      { components } = this.options;
+
     $root.classList.add(this.wrapperSelector);
+    components.forEach((Component) => {
+      const component = new Component();
+      $root.insertAdjacentHTML('beforeend', component.render());
+    });
     return $root;
   }
   render(): HTMLElement {
