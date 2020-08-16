@@ -1,11 +1,9 @@
 import './styles/rebootStyles.scss';
 import './styles/variables.scss';
 import './styles/main.scss';
-import MainPage from './pages/MainPage/MainPage';
 import TablePage from './pages/TablePage/TablePage';
+import { find } from './utils/helpFunctionsForHTML';
 
-const rootElement: HTMLElement = document.getElementById('appMountPoint');
- 
+const rootElement = find('#appMountPoint');
 
-
-rootElement.innerHTML = TablePage.render() 
+rootElement.insertAdjacentElement('beforeend', TablePage.render());

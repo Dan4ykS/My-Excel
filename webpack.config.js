@@ -96,6 +96,7 @@ module.exports = (env = {}) => {
     devtool: isProd ? '' : 'source-map',
     devServer: {
       open: true,
+      port: 1337,
     },
   };
 };
