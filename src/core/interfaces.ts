@@ -1,7 +1,8 @@
 import Component from './Component';
 
-export interface ICWOptions {
-  components: Array<new () => Component>;
+export interface ICOptions {
+  listeners: string[];
 }
-
-
+export interface ICWOptions {
+  components: Array<new ($root: HTMLElement) => Component>;
+}
